@@ -4,34 +4,6 @@ import Plan from "../plan";
 import { useDispatch, useSelector } from "react-redux";
 import { setUpgradePopUpShow } from "../../../services/home";
 
-const Button = ({ onClick }) => {
-  const dark = useSelector((state) => state.home.dark);
-  return (
-    <div
-      onClick={() => {
-        onClick();
-      }}
-      className={`w-[100%] ${!dark ? "bg-[#204c3a] " : "bg-[#204c3a]"}
-        
-        h-[34px]   cursor-pointer rounded-[4px] border-[1px] ${
-          dark ? "border-[#204c3a]" : "border-[#204c3a] "
-        } flex items-center justify-center mt-[20px]`}
-    >
-      <p
-        className={`text-[${
-          false ? "#fff" : "#000"
-        }]   f2 text-[12px]  border-[1px]  ${
-          dark ? "border-[#204c3a]" : "border-[#204c3a]"
-        } ${
-          dark ? "bg-[#38F8AC]" : "bg-[#38F8AC]"
-        } rounded-[4px] active:translate-y-[0px] hover:font-bold active:border-0 translate-y-[-2px] translate-x-[1.5px] active:translate-x-0 w-[100%] flex items-center justify-center h-[100%] tracking-wide font-medium `}
-      >
-        Upgrade Plan
-      </p>
-    </div>
-  );
-};
-
 // const Button = ({ onClick }) => {
 //   const dark = useSelector((state) => state.home.dark);
 //   return (
@@ -39,20 +11,48 @@ const Button = ({ onClick }) => {
 //       onClick={() => {
 //         onClick();
 //       }}
-//       className={`w-[100%] ${!dark ? "bg-[#0A0A18] " : "bg-[#1c1f26]"}
-
-//         h-[34px] mt-[20px]  cursor-pointer rounded-[4px]  flex items-center justify-center`}
+//       className={`w-[100%] ${!dark ? "bg-[#204c3a] " : "bg-[#204c3a]"}
+        
+//         h-[34px]   cursor-pointer rounded-[4px] border-[1px] ${
+//           dark ? "border-[#204c3a]" : "border-[#204c3a] "
+//         } flex items-center justify-center mt-[20px]`}
 //     >
 //       <p
-//         className={`text-[${false ? "#fff" : "#000"}]   f2 text-[12px]   ${
+//         className={`text-[${
+//           false ? "#fff" : "#000"
+//         }]   f2 text-[12px]  border-[1px]  ${
+//           dark ? "border-[#204c3a]" : "border-[#204c3a]"
+//         } ${
 //           dark ? "bg-[#38F8AC]" : "bg-[#38F8AC]"
-//         } rounded-[4px] hover:bg-[#2fe49c] active:translate-y-[0px] font-bold active:border-0 translate-y-[-3px] translate-x-[0px] active:translate-x-0 w-[100%] flex items-center justify-center h-[100%] tracking-wide `}
+//         } rounded-[4px] active:translate-y-[0px] hover:font-bold active:border-0 translate-y-[-2px] translate-x-[1.5px] active:translate-x-0 w-[100%] flex items-center justify-center h-[100%] tracking-wide font-medium `}
 //       >
 //         Upgrade Plan
 //       </p>
 //     </div>
 //   );
 // };
+
+const Button = ({ onClick }) => {
+  const dark = useSelector((state) => state.home.dark);
+  return (
+    <div
+      onClick={() => {
+        onClick();
+      }}
+      className={`w-[100%] ${!dark ? "bg-[#0A0A18] " : "bg-[#1c1f26]"}
+
+        h-[34px] mt-[20px]  cursor-pointer rounded-[4px]  flex items-center justify-center`}
+    >
+      <p
+        className={`text-[${false ? "#fff" : "#000"}]   f2 text-[12px]   ${
+          dark ? "bg-[#38F8AC]" : "bg-[#38F8AC]"
+        } rounded-[4px] hover:bg-[#2fe49c] active:translate-y-[0px] font-bold active:border-0 translate-y-[-3px] translate-x-[0px] active:translate-x-0 w-[100%] flex items-center justify-center h-[100%] tracking-wide `}
+      >
+        Upgrade Plan
+      </p>
+    </div>
+  );
+};
 
 const Item = ({ title, src, route }) => {
   const location = useLocation();

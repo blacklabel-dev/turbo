@@ -69,7 +69,7 @@ const CacheStatus = () => {
             onLoad={() => {
               setTimeout(() => {
                 setVidLoad(true);
-              }, 1350);
+              }, 1250);
             }}
             className="w-[300px]"
             alt=""
@@ -84,7 +84,7 @@ const CacheStatus = () => {
                 onLoad={() => {
                   setTimeout(() => {
                     setVidLoad(true);
-                  }, 1350);
+                  }, 1250);
                 }}
                 className="w-[300px]"
                 alt=""

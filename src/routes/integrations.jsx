@@ -171,7 +171,7 @@ const Integrations = () => {
   });
 
   const [show, setShow] = useState(false);
-
+  const dark = useSelector((state) => state.home.dark);
   return (
     <>
       {show && (
@@ -182,32 +182,42 @@ const Integrations = () => {
         />
       )}
       {!vidLoad ? (
-        <div className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center">
-          <img
-            src="/ggggggg.gif"
-            onLoad={() => {
-              setTimeout(() => {
-                setVidLoad(true);
-              }, 1250);
+        <div
+          style={{
+            backgroundColor: dark ? "#090917" : "#fff",
+          }}
+          className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center"
+        >
+          <video
+            autoPlay
+            className={"w-[300px]"}
+            muted
+             
+            onEnded={() => {
+              setVidLoad(true);
             }}
-            className="w-[300px]"
-            alt=""
-          />
+            src={dark ? "/load-b.mp4" : "/load-w.mp4"}
+          ></video>
         </div>
       ) : (
         <Suspense
           fallback={
-            <div className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center">
-              <img
-                src="/ggggggg.gif"
-                onLoad={() => {
-                  setTimeout(() => {
-                    setVidLoad(true);
-                  }, 1250);
+            <div
+              style={{
+                backgroundColor: dark ? "#090917" : "#fff",
+              }}
+              className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center"
+            >
+              <video
+                autoPlay
+                className={"w-[300px]"}
+                muted
+                 
+                onEnded={() => {
+                  setVidLoad(true);
                 }}
-                className="w-[300px]"
-                alt=""
-              />
+                src={dark ? "/load-b.mp4" : "/load-w.mp4"}
+              ></video>
             </div>
           }
         >

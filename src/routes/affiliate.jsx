@@ -59,31 +59,27 @@ const Affiliate = () => {
       }, 1000);
     }
   });
+  const dark = useSelector((state) => state.home.dark);
 
   return (
     <>
       {!vidLoad ? (
-        <div className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center">
-          {/* <video
+        <div
+          style={{
+            backgroundColor: dark ? "#090917" : "#fff",
+          }}
+          className="w-[100%] h-[100vh] bg-transparent flex items-center justify-center"
+        >
+          <video
             autoPlay
             className={"w-[300px]"}
             muted
+             
             onEnded={() => {
               setVidLoad(true);
             }}
-          >
-            <source src="/logo1.mp4" type="video/mp4"></source>
-          </video> */}
-          <img
-            src="/ggggggg.gif"
-            onLoad={() => {
-              setTimeout(() => {
-                setVidLoad(true);
-              }, 1250);
-            }}
-            className="w-[300px]"
-            alt=""
-          />
+            src={dark ? "/load-b.mp4" : "/load-w.mp4"}
+          ></video>
         </div>
       ) : (
         <Suspense fallback={null}>
